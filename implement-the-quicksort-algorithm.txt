@@ -1,0 +1,26 @@
+** start of main.py **
+
+def quick_sort(integers):
+    # Base case: empty list or single element is already sorted
+    if len(integers) <= 1:
+        return integers
+
+    less = []
+    equal = []
+    greater = []
+
+    pivot = integers[0]
+
+    for integer in integers:
+        if integer < pivot:
+            less.append(integer)
+        elif integer == pivot:
+            equal.append(integer)
+        else:
+            greater.append(integer)
+
+    # Recursively sort less and greater
+    return quick_sort(less) + equal + quick_sort(greater)
+
+** end of main.py **
+
