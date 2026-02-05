@@ -1,0 +1,27 @@
+** start of main.py **
+
+def dfs(matrix, start_node):
+    
+    n = len(matrix)
+    stack = [start_node]
+    visited = set()
+    result = []
+
+    while stack:
+        current = stack.pop()
+        if current not in visited:
+            visited.add(current)
+            result.append(current)
+
+            # Go through all possible neighbors
+            # Add neighbors with an edge (1 in matrix) to the stack
+            # Reverse to maintain "left-to-right" order
+
+            for neighbor in reversed(range(n)):
+                if matrix[current][neighbor] != 0 and neighbor not in visited:
+                    stack.append(neighbor)
+    
+    return result
+
+** end of main.py **
+
